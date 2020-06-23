@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    environment:
+      DEBUG: 'my_chat:*'
+      MONGO_URL: 'mongodb://db:27017/mychat'
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+  web:
+    build: ../my_chat_web
+    environment:
+      DEBUG: 'my_chat:*'
+    ports:
+      - '3001:3001'
+    volumes:
+      - ../my_chat_web:/usr/src
+      - /usr/src/node_modules
+  db:
+    image: mongo
