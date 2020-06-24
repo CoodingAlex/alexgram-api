@@ -26,6 +26,7 @@ Router.post(
   async (req, res, next) => {
     debug(`request POST to /api/chats/`)
     try {
+      if (!req.body.users) req.body.users = []
       const users = [req.user.username, ...req.body.users]
       const { name } = req.body
       const createdChat = await chatService.createChat(users, name)
