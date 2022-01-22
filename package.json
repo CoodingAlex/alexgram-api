@@ -27,7 +27,7 @@
     "mocha": "^8.0.1",
     "moment": "^2.26.0",
     "mongoose": "^5.9.18",
-    "nanoid": "^3.1.10",
+    "nanoid": "^3.1.31",
     "nyc": "^15.1.0",
     "passport": "^0.4.1",
     "passport-http": "^0.3.0",
